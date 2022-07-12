@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Page Not Found - Marasiya.com</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E03J9CYFJ2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-E03J9CYFJ2');
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Marasiya.com</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        {% block nav %}
+                            {% if path_data|length > 0 %}
+                                {% for page in path_data %}
+                                    <li><a href='/{{page["page_path"]}}'>{{page["nav_name"]}}</a></li>
+                                {% endfor %}
+                            {% else %}
+                            {% endif %}
+                        {% endblock nav %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid text-center">
+            <div class="row content text-left">
+            	<h1>Not Found</h1>
+		<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.<br><br>To go to the home page <a href="/">click here</a></p>
+                <hr>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6804075268466793" crossorigin="anonymous"></script>
+                <!-- Marasiya_FAPP -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6804075268466793" data-ad-slot="4128170514" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <p>Created and Maintained by Moizali</p>
+        </footer>
+    </body>
+</html>
